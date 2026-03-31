@@ -1,5 +1,5 @@
 /* ============================================================
-   米永憲司 LP — script.js
+   有限会社CBC — script.js
    Interactions & Animations
    ============================================================ */
 
@@ -36,9 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const animatedElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Stagger by finding the delay attribute or index
         const delay = entry.target.dataset.delay || 0;
         setTimeout(() => {
           entry.target.classList.add('visible');
@@ -54,47 +53,48 @@ document.addEventListener('DOMContentLoaded', () => {
   animatedElements.forEach(el => observer.observe(el));
 
   // ── Counter animation for stats ──
-  const counters = document.querySelectorAll('[data-count]');
-  let countersAnimated = false;
+  const allCounters = document.querySelectorAll('[data-count]');
+  const animatedCounterSets = new Set();
 
+  function animateCounter(counter) {
+    const target = parseInt(counter.dataset.count, 10);
+    const suffix = counter.dataset.suffix || '';
+    const duration = 2000;
+    const startTime = performance.now();
+
+    function updateCounter(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(eased * target);
+      counter.textContent = current + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.textContent = target + suffix;
+      }
+    }
+
+    requestAnimationFrame(updateCounter);
+  }
+
+  // Observer for any element with data-count
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && !countersAnimated) {
-        countersAnimated = true;
-        animateCounters();
-        counterObserver.unobserve(entry.target);
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        if (!animatedCounterSets.has(counter)) {
+          animatedCounterSets.add(counter);
+          animateCounter(counter);
+        }
+        counterObserver.unobserve(counter);
       }
     });
   }, { threshold: 0.5 });
 
-  const statsBar = document.querySelector('.stats-bar');
-  if (statsBar) counterObserver.observe(statsBar);
-
-  function animateCounters() {
-    counters.forEach(counter => {
-      const target = parseInt(counter.dataset.count, 10);
-      const suffix = counter.dataset.suffix || '';
-      const duration = 2000;
-      const startTime = performance.now();
-
-      function updateCounter(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        // Ease out cubic
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const current = Math.floor(eased * target);
-        counter.textContent = current + suffix;
-
-        if (progress < 1) {
-          requestAnimationFrame(updateCounter);
-        } else {
-          counter.textContent = target + suffix;
-        }
-      }
-
-      requestAnimationFrame(updateCounter);
-    });
-  }
+  allCounters.forEach(counter => counterObserver.observe(counter));
 
   // ── Smooth scroll for anchor links ──
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── Contact form UX (prevent default, show feedback) ──
-  const form = document.querySelector('.contact-form');
+  const form = document.querySelector('#contactForm');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -136,5 +136,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, { passive: true });
   }
+
+  // ── Active nav link highlighting ──
+  const sections = document.querySelectorAll('section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+
+  const highlightObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navAnchors.forEach(a => {
+          a.style.color = a.getAttribute('href') === `#${id}`
+            ? 'var(--color-text)' : '';
+        });
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' });
+
+  sections.forEach(section => highlightObserver.observe(section));
 
 });
