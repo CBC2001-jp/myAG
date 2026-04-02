@@ -691,6 +691,14 @@ h1, h2, h3, h4 {
   opacity: 1;
 }
 
+.service-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
 .service-card .icon {
   font-size: 2rem;
   margin-bottom: 16px;
