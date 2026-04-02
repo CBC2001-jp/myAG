@@ -998,6 +998,34 @@ h1, h2, h3, h4 {
   line-height: 1.8;
 }
 
+.company-info-table {
+  display: grid;
+  grid-template-columns: 6em 1fr;
+  gap: 10px 16px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.company-info-table dt {
+  color: var(--color-text-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.company-info-table dd {
+  color: var(--color-text);
+  margin: 0;
+}
+
+.company-info-table a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.company-info-table a:hover {
+  text-decoration: underline;
+}
+
 .contact-details {
   list-style: none;
 }
