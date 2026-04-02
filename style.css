@@ -545,8 +545,8 @@ h1, h2, h3, h4 {
 
 .company-history-title {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
-  margin-bottom: 12px;
+  font-size: 1.6rem;
+  margin-bottom: 0;
   color: var(--color-text);
 }
 
