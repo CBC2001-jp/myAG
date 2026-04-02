@@ -478,7 +478,7 @@ h1, h2, h3, h4 {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius);
-  padding: 36px 28px;
+  overflow: hidden;
   transition: var(--transition);
   box-shadow: var(--shadow-sm);
 }
@@ -489,16 +489,15 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow-lg);
 }
 
-.mission-card .icon {
-  font-size: 2rem;
-  margin-bottom: 16px;
-  width: 56px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-bg-section-alt);
-  border-radius: 12px;
+.mission-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.mission-card-body {
+  padding: 24px;
 }
 
 .mission-card h3 {
