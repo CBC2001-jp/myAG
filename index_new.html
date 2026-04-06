@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>有限会社CBC | 地域の「おいしい」を、世界で売れる力に変える</title>
+    <meta name="description" content="食品ビジネス30年の実務力で、地域の食を世界基準へ。HACCP認証支援、事業計画立案、海外展開まで一気通貫で伴走します。">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── index_new.html 固有スタイル ── */
+
+        /* プロジェクト01 フィーチャード */
+        .project-featured {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4f8 100%);
+            border: 2px solid #2e86c1;
+            border-radius: 16px;
+            padding: 48px 40px;
+            margin-bottom: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #1a5276, #2e86c1);
+        }
+        .project-featured .project-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #2e86c1;
+            opacity: 0.3;
+            position: absolute;
+            top: 20px;
+            right: 32px;
+        }
+        .project-featured .location {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+        .project-featured h3 {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+        .project-featured-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 24px;
+        }
+        .project-featured-text p {
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+        .project-featured-img {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            max-height: 280px;
+        }
+        .project-featured-target {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #1a5276, #2e86c1);
+            color: #fff;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+        .progress-blocks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 28px;
+        }
+        .progress-block {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #dde8f0;
+        }
+        .progress-block h4 {
+            font-size: 1rem;
+            color: #1a5276;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #2e86c1;
+        }
+        .progress-block p {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        .project-featured .project-highlights {
+            margin-top: 24px;
+        }
+
+        /* お問い合わせ入口カード */
+        .contact-intro h3 {
+            font-family: var(--font-heading, serif);
+            font-size: 1.4rem;
+            margin-bottom: 28px;
+            color: #1a1a1a;
+        }
+        .contact-entry-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .contact-entry-card {
+            background: #f0f7ff;
+            border: 1px solid #dde8f0;
+            border-radius: 12px;
+            padding: 28px 24px;
+        }
+        .contact-entry-card h4 {
+            font-size: 1.05rem;
+            color: #1a5276;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .contact-entry-card p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .project-featured {
+                padding: 32px 20px;
+            }
+            .project-featured h3 {
+                font-size: 1.25rem;
+            }
+            .project-featured-body {
+                grid-template-columns: 1fr;
+            }
+            .progress-blocks {
+                grid-template-columns: 1fr;
+            }
+            .contact-entry-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ───── Navigation ───── -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo"><img src="cbc_logo.jpeg" alt="CBC" class="nav-logo-img"></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#mission">理念</a></li>
+                <li><a href="#services">CBCの強み</a></li>
+                <li><a href="#projects">取り組み・実績</a></li>
+                <li><a href="#about">会社概要</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ───── Hero ───── -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="hero_regional.png" alt="日本の地方沿岸の美しい風景">
+        </div>
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-tag">
+                    <span class="dot"></span>
+                    食品ビジネス30年の実務力を、地域のために。
+                </div>
+                <h1>地域の「おいしい」を、<br>世界で売れる力に変える。</h1>
+                <p class="hero-subtitle">福井県高浜町にて地域再生マネージャーとして、対米HACCP認証取得プロジェクトを推進中。</p>
+                <p class="hero-description">
+                    計画書を作って終わりにはしません。現場に入り、成果が出る仕組みを一緒につくります。
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">取り組みを見る →</a>
+                    <a href="#contact" class="btn btn-outline">お問い合わせ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ───── Mission ───── -->
+    <section class="mission" id="mission">
+        <div class="container">
+            <div class="fade-in">
+                <span class="section-label">Our Philosophy</span>
+                <h2 class="section-title">理念</h2>
+            </div>
+
+            <blockquote class="mission-quote fade-in">
+                父が築いた「グローバルな視野を持ちながら、地域の人と深く関わる」というDNAを受け継ぎ、<br>
+                30年の食品ビジネス経験を地域のために使うと決めました。<br><br>
+                一過性のイベントで終わらせず、町に売上と利益を残し続ける<strong>「仕組みづくり」</strong>に投資する。<br>
+                それがCBCの基本姿勢です。
+            </blockquote>
+
+            <div class="mission-cards">
+                <div class="mission-card fade-in" data-delay="0">
+                    <img src="mission_01.jpeg" alt="潜在価値の発掘" class="mission-card-img">
+                    <div class="mission-card-body">
+                        <h3>潜在価値の発掘</h3>
+                        <p>地域には、まだ届いていない価値がある。全国各地の事例から得た広い視点で、その可能性を見つけ出します。ひとつの成功事例で終わらせず、仕組みとして広げていきます。</p>
+                    </div>
+                </div>
+                <div class="mission-card fade-in" data-delay="150">
+                    <img src="mission_02.jpeg" alt="地域に根付く支援" class="mission-card-img">
+                    <div class="mission-card-body">
+                        <h3>地域に根付く支援</h3>
+                        <p>仕組みを当てはめるだけでなく、地域に最適な形で根付かせていくプロセスと、事業の継続性を重視しています。「書類上の計画」ではなく、事業として回り続ける計画をつくります。</p>
+                    </div>
+                </div>
+                <div class="mission-card fade-in" data-delay="300">
+                    <img src="mission_03.jpeg" alt="自走への伴走" class="mission-card-img">
+                    <div class="mission-card-body">
+                        <h3>自走への伴走</h3>
+                        <p>地域ごとの想いやリソースを丁寧に見極め、その地域に合った形で導入をサポート。一過性のイベントで終わらせず、地域が自走できるところまで伴走します。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ───── Services (3つの強み) ───── -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="fade-in">
+                <span class="section-label">Our Strengths</span>
+                <h2 class="section-title">CBCの強み</h2>
+                <p class="section-subtitle">町を元気にしたいという想いだけでは、地域は変わらない。想いを形にするには、実務の力が要る。CBCが地域に提供するのは、その実務力です。</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card fade-in" data-delay="0">
+                    <img src="service_01.jpeg" alt="食品の現場を知り尽くした30年の実務力" class="service-card-img">
+                    <h3>食品の現場を知り尽くした30年の実務力</h3>
+                    <p>加工場の床の傾斜をどうするかという現場の細部から、海外バイヤーとの商談まで。最初から最後まで現場に入って一緒に動きます。<br><br>30年間、食品ビジネスの世界で「どうすれば売れるか」を自ら実践してきました。研究開発、製造管理、品質認証、海外事業運営——そのノウハウを、地域の事業にそのまま活かします。</p>
+                    <div class="service-tags">
+                        <span class="service-tag">HACCP認証</span>
+                        <span class="service-tag">事業計画立案</span>
+                        <span class="service-tag">対米輸出支援</span>
+                    </div>
+                </div>
+                <div class="service-card fade-in" data-delay="150">
+                    <img src="service_02.jpg" alt="デジタルの力で楽しい関わりしろをつくる" class="service-card-img">
+                    <h3>デジタルの力で「楽しい関わりしろ」をつくる</h3>
+                    <p>地域の一次産業 × テクノロジーで、離れていても"つながってる感"を持てる仕組みをつくります。楽しいからこそ人が集まり、関係人口が生まれ、持続可能なコミュニティが育っていきます。<br><br>・NFT × 一次産業 ― 生産者と消費者をデジタルでつなぎ、応援・共感の関係をつくる<br>・観光・地方紹介アプリ ― 地域の魅力を届け、「知る・訪れる・関わる」の入口を広げる<br>・関係人口の創出 ― 楽しさを入口に、一過性で終わらない継続的なつながりを育てる</p>
+                    <div class="service-tags">
+                        <span class="service-tag">NFT × 一次産業</span>
+                        <span class="service-tag">観光・地方紹介アプリ</span>
+                        <span class="service-tag">関係人口創出</span>
+                    </div>
+                </div>
+                <div class="service-card fade-in" data-delay="0">
+                    <img src="strengths_report.png" alt="CliftonStrengths 34 Results" class="service-card-img">
+                    <h3>「強み」にフォーカスするチームづくり</h3>
+                    <p>一人ひとりが持つ「強み」を見える化するプログラムです。現場では、限られた人材でいかに力を発揮するかが鍵。強みに目を向けることで、前に進む力が生まれます。地域の担い手の強みを活かしたチームづくりをサポートします。<br><br>・自分では気づきにくい才能を明らかにする<br>・互いの強みを知り、活かし合える地域チームへ<br>・強みへのフォーカスが、現場の自発性と突破力を生む</p>
+                    <div class="service-tags">
+                        <span class="service-tag">ストレングスコーチング</span>
+                        <span class="service-tag">チームビルディング</span>
+                        <span class="service-tag">研修</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ───── Projects (実績) ───── -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="fade-in">
+                <span class="section-label">Track Record</span>
+                <h2 class="section-title">取り組み・実績</h2>
+                <p class="section-subtitle">全国各地の地域と共に歩んだプロジェクトの一部をご紹介します。</p>
+            </div>
+
+            <!-- プロジェクト01：フィーチャード -->
+            <div class="project-featured fade-in">
+                <div class="project-number">01</div>
+                <div class="location">📍 福井県高浜町</div>
+                <h3>高浜の水産品を、米国市場へ——対米HACCP認証への挑戦</h3>
+
+                <div class="project-featured-body">
+                    <div class="project-featured-text">
+                        <p>高浜町には優れた水産加工の技術がある。しかしその価値は国内市場にとどまっている。この食を世界基準に引き上げれば、町の産業の未来が変わる。</p>
+                        <p>地域再生マネージャーとして、大日本水産会と連携し対米HACCP認証取得プロジェクトを設計・推進中。認証ロードマップの策定、現場教育プログラムの設計、加工場改修計画の立案、投資対効果を含む事業計画の策定まで一気通貫で伴走しています。</p>
+                        <span class="project-featured-target">目標：2027年 認証取得</span>
+                    </div>
+                    <img src="project_01.jpeg" alt="高浜の水産品を米国市場へ" class="project-featured-img">
+                </div>
+
+                <div class="progress-blocks">
+                    <div class="progress-block">
+                        <h4>現在の進捗</h4>
+                        <p>加工場改修がスタート。対米HACCP認証の取得に向け、大日本水産会と連携しながら現場の土台づくりを一つひとつ着実に進めています。</p>
+                    </div>
+                    <div class="progress-block">
+                        <h4>ゴールまでの設計</h4>
+                        <p>米国の厳格な基準をどうクリアし、どうやって海外バイヤーに届けるか。30年の実務経験に基づくロードマップ——認証取得計画、現場教育プログラム、事業計画——の設計は9割完了。あとはこの設計図どおりに、現場を動かしていく段階です。</p>
+                    </div>
+                </div>
+
+                <div class="project-highlights">
+                    <span class="project-highlight">✓ 米国基準HACCP認証ロードマップ策定</span>
+                    <span class="project-highlight">✓ 現場教育プログラム設計</span>
+                    <span class="project-highlight">✓ 加工場改修計画立案</span>
+                    <span class="project-highlight">✓ 投資対効果を含む事業計画策定</span>
+                </div>
+            </div>
+
+            <!-- プロジェクト02 -->
+            <div class="project-card fade-in">
+                <div class="project-number">02</div>
+                <div>
+                    <div class="location">📍 和歌山県みなべ町</div>
+                    <h3>NFTを活用した特産品の販売・コミュニティ形成</h3>
+                    <p>地元農家と協働し「農産物の年間オーナー制度（NFT）」を展開。デジタル技術と現地でのリアルな農業体験を掛け合わせ、動画配信等も活用しながら県外からの継続的な関係人口を創出しています。</p>
+                    <div class="project-highlights">
+                        <span class="project-highlight">✓ NFTオーナー制度設計</span>
+                        <span class="project-highlight">✓ 関係人口の創出</span>
+                        <span class="project-highlight">✓ 動画配信・ムービー制作連携</span>
+                    </div>
+                </div>
+                <img src="project_02.jpeg" alt="NFTを活用した特産品の販売・コミュニティ形成" class="project-card-img">
+            </div>
+
+            <!-- プロジェクト03 -->
+            <div class="project-card fade-in">
+                <div class="project-number">03</div>
+                <div>
+                    <div class="location">📍 インバウンド向け</div>
+                    <h3>海外アプリメーカーとの観光アプリ開発</h3>
+                    <p>グローバルな知見を活かし、海外メーカーと連携したインバウンド・国内観光向けアプリを提案。地域の観光資源をデジタル上で可視化し、新たな体験価値を生み出します。</p>
+                    <div class="project-highlights">
+                        <span class="project-highlight">✓ 海外企業との連携</span>
+                        <span class="project-highlight">✓ 観光資源のデジタル化</span>
+                        <span class="project-highlight">✓ インバウンド誘客</span>
+                    </div>
+                </div>
+                <img src="project_03.png" alt="海外アプリメーカーとの観光アプリ開発提案" class="project-card-img">
+            </div>
+
+            <!-- プロジェクト04 -->
+            <div class="project-card fade-in">
+                <div class="project-number">04</div>
+                <div>
+                    <div class="location">📍 国内大手企業</div>
+                    <h3>マネジメント研修（強み・組織開発）</h3>
+                    <p>国内大手メーカーのマネジメント層に対し、個人の「資質」を言語化し活用するワークショップを実施。自身とメンバーの強みを相互に理解し、それぞれの強みを掛け合わせることでチーム力の底上げを支援しました。このノウハウは、地域の事業体や行政組織にも応用可能です。</p>
+                    <div class="project-highlights">
+                        <span class="project-highlight">✓ ストレングス分析</span>
+                        <span class="project-highlight">✓ チーム力向上</span>
+                        <span class="project-highlight">✓ 行政組織にも応用</span>
+                    </div>
+                </div>
+                <img src="project_04.png" alt="企業向けマネジメント研修（強み開発・組織開発）" class="project-card-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- ───── About ───── -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="fade-in">
+                <span class="section-label">Representative</span>
+                <h2 class="section-title">会社概要</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text fade-in-left">
+                    <div class="company-history">
+                        <div class="about-name-row">
+                            <img src="cbc_logo.jpeg" alt="CBC ロゴ" class="about-logo">
+                            <h3 class="company-history-title">有限会社CBC</h3>
+                        </div>
+                        <p>2001年に総合商社を退職した父が設立。海外製品の輸入、研修生の受け入れやボランティア、地域への日本文化の継承など、草の根の国際交流と地域貢献に尽力していました。</p>
+                        <p>父の代から息づく「グローバルな視野を持ちながら、地域の人と深く関わる」という会社のDNAを受け継ぎ、2024年より事業を再開いたしました。</p>
+                    </div>
+
+                    <h3 style="font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 0;">米永 憲司</h3>
+                    <p style="color: var(--color-accent); font-size: 0.9rem; margin-bottom: 24px;">代表取締役 ／ Kenji Yonenaga</p>
+
+                    <p>国内外の食品企業で30年以上、研究開発から経営まで歴任。アドバイスだけのコンサルタントではなく、自ら現場で「どうすれば売れるか」を実践してきた食品ビジネスの実務家です。父が設立したCBCを受け継ぎ、その経験を地域のために活かすべく、全国各地で地域創生プロジェクトに取り組んでいます。</p>
+                    <ul class="about-credentials">
+                        <li>地域再生マネージャー（福井県高浜町）</li>
+                        <li>Gallup認定ストレングスコーチ</li>
+                    </ul>
+
+                    <div class="strengths">
+                        <span class="strength-tag">地域再生マネージャー</span>
+                        <span class="strength-tag">Gallup認定ストレングスコーチ</span>
+                        <span class="strength-tag">HACCP導入支援</span>
+                        <span class="strength-tag">NFT × 地域活性化</span>
+                    </div>
+
+                    <img src="kenji_profile.jpeg" alt="米永憲司 代表取締役" class="about-profile-photo">
+                </div>
+
+                <div class="profile-card fade-in-right">
+                    <h4 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 20px; color: var(--color-accent);">経歴ハイライト</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="year">キャリア初期</span>
+                            <h4>国内大手食品メーカー</h4>
+                            <p>営業入社、マーケティング、米国駐在、R&D研究所</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="year">2000s – 2010s</span>
+                            <h4>欧州系外資 食品メーカー</h4>
+                            <p>フードサービス向け食材メーカーのプロダクトマネージャー・取締役を経て、日本法人の立ち上げ社長を歴任</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="year">2020s</span>
+                            <h4>北米拠点 食品商社</h4>
+                            <p>現地責任者として、和牛・水産品の輸入販売事業のマネジメントと市場拡大を推進</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="year">2024 –</span>
+                            <h4>有限会社CBC 代表取締役</h4>
+                            <p>全国各地で地域創生プロジェクトを推進</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ───── Contact ───── -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-intro fade-in">
+                <h3>地域の「こうしたい」を、一緒に考えませんか？</h3>
+                <div class="contact-entry-cards">
+                    <div class="contact-entry-card">
+                        <h4>現場目線のオンライン無料相談（30分）</h4>
+                        <p>「何から手をつければいいかわからない」「今の計画で本当に海外で売れるのか」。そんな具体的な悩みに、実務経験から率直にお答えします。まずはお気軽にお声がけください。</p>
+                    </div>
+                    <div class="contact-entry-card">
+                        <h4>高浜町プロジェクト 進捗レポートの共有</h4>
+                        <p>完成した成功事例ではなく、現在進行形のリアルな記録。どんな壁があり、どう乗り越えているか。同じ課題を持つ担当者の方へ、生の情報を共有する意見交換の場です。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info fade-in-left">
+                    <span class="section-label">Contact</span>
+                    <h2 class="section-title" style="font-size: 1.8rem;">お問い合わせ</h2>
+                    <dl class="company-info-table">
+                        <dt>会社名</dt>
+                        <dd>有限会社シービーシー（CBC Co., Ltd.）</dd>
+                        <dt>代表者</dt>
+                        <dd>代表取締役　米永 憲司</dd>
+                        <dt>所在地</dt>
+                        <dd>〒665-0803<br>兵庫県宝塚市花屋敷つつじガ丘1番20号</dd>
+                        <dt>連絡先</dt>
+                        <dd><a href="mailto:info@cbc2001.com">info@cbc2001.com</a></dd>
+                        <dt>取引銀行</dt>
+                        <dd>三井住友銀行</dd>
+                        <dt>登録番号</dt>
+                        <dd>T6150002009928</dd>
+                    </dl>
+                </div>
+
+                <div class="contact-form-wrapper fade-in-right">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">お名前</label>
+                            <input type="text" id="contactName" name="name" placeholder="山田 太郎" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactOrg">ご所属</label>
+                            <input type="text" id="contactOrg" name="organization" placeholder="◯◯市役所 地域振興課">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">メールアドレス</label>
+                            <input type="email" id="contactEmail" name="email" placeholder="example@city.lg.jp" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">メッセージ</label>
+                            <textarea id="contactMessage" name="message" rows="5" placeholder="ご相談内容やご質問など、お気軽にお書きください"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">送信する →</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ───── Footer ───── -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="name">CBC<span>.</span></div>
+                    <div class="company">有限会社シービーシー</div>
+                </div>
+                <div class="footer-links">
+                    <a href="#mission">理念</a>
+                    <a href="#services">CBCの強み</a>
+                    <a href="#projects">取り組み・実績</a>
+                    <a href="#about">会社概要</a>
+                    <a href="#contact">お問い合わせ</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2021 有限会社シービーシー
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

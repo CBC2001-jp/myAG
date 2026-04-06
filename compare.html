@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBCウェブサイト バージョン比較</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrapper {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 520px;
+        }
+        .logo {
+            width: 80px;
+            margin-bottom: 24px;
+        }
+        h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        a.btn {
+            display: block;
+            padding: 16px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        a.btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .btn-current {
+            background: #fff;
+            color: #333;
+            border: 2px solid #ddd;
+        }
+        .btn-new {
+            background: linear-gradient(135deg, #1a5276, #2e86c1);
+            color: #fff;
+            border: 2px solid transparent;
+        }
+        .notes {
+            font-size: 0.85rem;
+            color: #888;
+            line-height: 1.8;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <img src="cbc_logo.jpeg" alt="CBC" class="logo">
+        <h1>CBC ウェブサイト バージョン比較</h1>
+        <div class="buttons">
+            <a href="index_current.html" class="btn btn-current">現行バージョンを見る</a>
+            <a href="index_new.html" class="btn btn-new">新バージョンを見る</a>
+        </div>
+        <div class="notes">
+            <p>※ 本番（index.html）は現行バージョンのままです。</p>
+            <p>※ 新バージョンを本番に反映する場合は、index_new.html を index.html にリネームしてください。</p>
+        </div>
+    </div>
+</body>
+</html>
