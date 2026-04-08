@@ -464,6 +464,7 @@ h1, h2, h3, h4 {
   position: relative;
   padding: 32px 0;
   line-height: 1.8;
+  quotes: none;
 }
 
 .mission-quote::before {
