@@ -481,7 +481,8 @@ h1, h2, h3, h4 {
 }
 
 .mission-quote::after {
-  content: none;
+  content: '' !important;
+  display: none !important;
 }
 
 .mission-cards {
