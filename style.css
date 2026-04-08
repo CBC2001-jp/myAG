@@ -479,6 +479,10 @@ h1, h2, h3, h4 {
   line-height: 1;
 }
 
+.mission-quote::after {
+  content: none;
+}
+
 .mission-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
